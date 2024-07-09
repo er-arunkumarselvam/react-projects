@@ -143,6 +143,7 @@ function getBook(id) {
     return data.find((d) => d.id === id);
 }
 
+// 1. Object & Array Destructring
 // Normal Method
 const book = getBook(3);
 console.log(book);
@@ -153,6 +154,26 @@ console.log(book.author);
 console.log(book.genres[0], book.genres[1]);
 
 // Object Destructuring
-const {title, author, publicationDate} = book;
+const {title, author, publicationDate,genres,pages} = book;
 
 console.log(title, author, publicationDate);
+
+// Array Destructuring
+const [genreOne, genreTwo, genreThree] = genres;
+console.log(genreOne, genreTwo, genreThree);
+
+// 2. Rest / Spread Operator
+// Rest Operator - Rest of the element using destructuring
+const [genreName, ...otherGenre] = genres;
+console.log(genreName, otherGenre);
+
+// Spread Operator 
+const updatedGenre = [...genres, "fantacy"];
+console.log(updatedGenre);
+
+const addNewValue = { ...book,pages:700, price:2000}
+console.log(addNewValue);
+
+// Template Literals
+const summary = `${title} is a wonderful book, a ${pages} - pages long book, was written by ${author}`;
+console.log(summary);
