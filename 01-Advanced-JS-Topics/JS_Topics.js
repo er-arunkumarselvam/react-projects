@@ -145,7 +145,7 @@ function getBook(id) {
 
 // 1. Object & Array Destructring
 // Normal Method
-const book = getBook(3);
+const book = getBook(2);
 console.log(book);
 
 console.log(book.title);
@@ -177,3 +177,16 @@ console.log(addNewValue);
 // Template Literals
 const summary = `${title} is a wonderful book, a ${pages} - pages long book, was written by ${author}`;
 console.log(summary);
+
+// Ternary Operator
+const bookSize = pages >1000 ? "large book" : "small book";
+console.log(`${title} is a ${bookSize}, the no.of pages is ${pages} - pages.`);
+
+// Normal Function
+// function findYear(year){
+//     return year.split("-") [0]
+// }
+// console.log(findYear(publicationDate));
+// Arrow Function - (most of the case used to one function)
+const findYear = (year) => year.split("-")[0];
+console.log(`This book published on ${findYear(publicationDate)}.`);
